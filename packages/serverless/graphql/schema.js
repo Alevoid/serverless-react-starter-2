@@ -1,33 +1,30 @@
-// import { ApolloServer, gql } from "apollo-server-lambda";
-
-// const typeDefs = gql`
-//   type Query {
-//     greeting: String
-//   }
-// `;
-
-// const resolvers = {
-//   Query: {
-//     greeting: () => "Hello there!"
-//   }
-// };
-
-// export default new ApolloServer({
-//   typeDefs,
-//   resolvers,
-//   context: ({ event, context }) => ({
-//     headers: event.headers,
-//     functionName: context.functionName,
-//     event,
-//     context
-//   })
-// });
 export const schema = `
+  type Item {
+    id: String
+    task: String!
+    isCompleted: Boolean
+  }
+
+  type GetTodo {
+    Items: [Item]
+    Count: Int
+    ScannedCount: Int
+  } 
+
   type Query {
     greeting: String
+    getAllTodos: GetTodo
+    getTodo: GetTodo
+  }
+
+  type Mutation {
+    createTodo(task: String!): Item
+    updateTodoStatus(id: String!, isCompleted: Boolean!): Item
+    deleteTodo(id: String!): Item
   }
 
   schema {
     query: Query
+    mutation: Mutation
   }
 `;

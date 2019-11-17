@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import Content from "../Content";
+import AddTask from "../AddTask";
 
 const Container = styled.div`
   text-align: center;
@@ -44,10 +45,8 @@ const App = () => {
       <Header>
         <p>React + Serverless with GraphQL</p>
       </Header>
-      <Button disabled={callApi} onClick={() => !callApi && setCallApi(true)}>
-        Call Api
-      </Button>
-      {callApi && <Content />}
+      <AddTask />
+      <Content />
     </Container>
   );
 };
