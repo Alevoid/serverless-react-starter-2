@@ -1,12 +1,7 @@
 import React from "react";
-import styled from "styled-components";
 import { useQuery } from "@apollo/react-hooks";
 
 import { GREETING } from "./query";
-
-const StyledContent = styled.section`
-  background: lightgray;
-`;
 
 const Content = () => {
   const { loading, error, data } = useQuery(GREETING);

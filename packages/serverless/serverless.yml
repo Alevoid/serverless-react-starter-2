@@ -1,4 +1,4 @@
-service: serverless
+service: sls-with-graphql
 
 provider:
   name: aws
@@ -17,7 +17,7 @@ custom:
     port: 8080
 
 functions:
-  hello:
+  api:
     handler: graphql/handler.graphqlHandler
     events:
       - http:

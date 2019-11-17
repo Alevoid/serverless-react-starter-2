@@ -1,6 +1,6 @@
-import apolloServer from "./schema";
+import server from "./server";
 
-export const graphqlHandler = apolloServer.createHandler({
+export const graphqlHandler = server.createHandler({
   cors: {
     origin: true,
     credentials: true
