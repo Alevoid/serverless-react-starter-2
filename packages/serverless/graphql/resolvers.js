@@ -51,7 +51,7 @@ const updateItemStatus = (id, isCompleted) =>
 
 export const resolvers = {
   Query: {
-    greeting: () => "Hello there!",
+    greeting: () => "+ Serverless with GraphQL",
     getAllTodos: () => getAllTodos(),
     getTodo: () => getTodo()
   },
@@ -69,8 +69,8 @@ export const resolvers = {
       return { id, isCompleted };
     },
     deleteTodo: async (root, { id }) => {
-      const test = await deleteTodo(id);
-      console.log(test, id);
+      await deleteTodo(id);
+
       return { id };
     }
   }

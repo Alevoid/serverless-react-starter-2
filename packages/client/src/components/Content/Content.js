@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useQuery } from "@apollo/react-hooks";
 import { get } from "lodash";
 
-import { GET_TODO, GET_ALL_TODOS, GREETING } from "./query";
+import { GET_ALL_TODOS } from "./query";
 
 import Delete from "./Delete";
 import ChangeStatus from "./ChangeStatus";

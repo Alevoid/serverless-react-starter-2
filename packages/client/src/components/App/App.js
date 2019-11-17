@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
+import { useQuery } from "@apollo/react-hooks";
+import { get } from "lodash";
 import styled from "styled-components";
 
+import { GREETING } from "./query";
 import Content from "../Content";
 import AddTask from "../AddTask";
 
@@ -20,30 +23,15 @@ const Header = styled.div`
   color: white;
 `;
 
-const Button = styled.button`
-  margin: 4rem 0;
-  padding: 1rem;
-  border-radius: 0.4rem;
-  background: #009e91;
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
-  outline: 0;
-  transition: all 1s ease-out;
-
-  &:disabled {
-    background: white;
-    color: gray;
-  }
-`;
-
 const App = () => {
-  const [callApi, setCallApi] = useState(false);
+  const { data } = useQuery(GREETING);
+
+  const greetingMessage = get(data, "greeting", "");
 
   return (
     <Container>
       <Header>
-        <p>React + Serverless with GraphQL</p>
+        <p>React {greetingMessage}</p>
       </Header>
       <AddTask />
       <Content />
