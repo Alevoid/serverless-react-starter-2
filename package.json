@@ -9,12 +9,12 @@
   ],
   "description": "react + serverless (with graphql) starter",
   "scripts": {
-    "start": "concurrently \"yarn start:client\" \"yarn start:serverless\"",
+    "start": "concurrently \"PORT=3006 yarn start:client\" \"yarn start:serverless\"",
     "quickInstall": "yarn && yarn install:client && yarn install:serverless",
     "start:client": "yarn workspace client run start",
     "start:serverless": "yarn workspace serverless run start",
     "install:client": "yarn workspace client",
-    "install:serverless": "yarn workspace serverless"
+    "install:serverless": "yarn workspace serverless && yarn workspace serverless run dynamodb:install"
   },
   "devDependencies": {
     "concurrently": "^5.0.0"

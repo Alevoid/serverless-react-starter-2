@@ -17,6 +17,7 @@
     "uuid": "^3.3.3"
   },
   "scripts": {
+    "dynamodb:install": "sls dynamodb install",
     "start": "concurrently \"sls offline\" \"sls dynamodb start --seed=domain\""
   }
 }

@@ -15,4 +15,8 @@ This is enough to have the project up and running;
 fe: `http://localhost:3000`
 sls be: `http://localhost:8080`
 
-Otherwise packages can be installed and run separately.
+Otherwise packages can be installed and run separately. In this case, for the serverless repo, before anything: remember to install dynamodb locally.
+
+```
+yarn run dynamodb:install
+```
