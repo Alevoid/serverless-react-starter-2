@@ -7,7 +7,7 @@
     "serverless-bundle": "^1.2.5"
   },
   "dependencies": {
-    "apollo-server-lambda": "^2.9.9",
+    "apollo-server-lambda": "^2.14.2",
     "aws-sdk": "^2.573.0",
     "bluebird": "^3.7.1",
     "concurrently": "^5.0.0",
